@@ -82,11 +82,13 @@ by default are registered several service aliases. This are:
 
 If you do not wannt to register this aliases, take a look at the method prototype:
 	
-	public function register(	$name,
-                             		$service,
-                             		$registerSelfAsAlias = true,
-                             		$registerInterfacesAsAliases = true,
-                             		$registerParentsAsAliases = true);
+	public function register($name,
+                             	 $service,
+                             	 $registerSelfAsAlias = true,
+                             	 $registerInterfacesAsAliases = true,
+                             	 $registerParentsAsAliases = true);
+
+Services ca be objects, closures, string(classes names)
 
 Loading Library
 ===============

@@ -71,6 +71,23 @@ First of all you have to register all dependencies, but keep in mind that:
     Pyha\DI\Factory::getInstance()->get('WeWannaGet'); // to get instance only once, just what an singleton does
     Pyha\DI\Factory::getInstance()->create('WeWannaGet'); // to create new instance each time
 
+To register aliases use addAlias() Factory method.
+
+NOTE: if as a service parameter to the register method is provided an object
+by default are registered several service aliases. This are:
+
+	- All Interfaces names implemented
+	- All parent classes from extension tree
+	- All Traits used
+
+If you do not wannt to register this aliases, take a look at the method prototype:
+	
+	public function register(	$name,
+                             		$service,
+                             		$registerSelfAsAlias = true,
+                             		$registerInterfacesAsAliases = true,
+                             		$registerParentsAsAliases = true);
+
 Loading Library
 ===============
 
